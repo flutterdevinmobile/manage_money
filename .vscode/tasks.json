@@ -1,0 +1,47 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Get SHA-1 Key",
+            "type": "shell",
+            "command": "keytool",
+            "args": [
+                "-list",
+                "-v",
+                "-keystore",
+                "${env:USERPROFILE}\\.android\\debug.keystore",
+                "-alias",
+                "androiddebugkey",
+                "-storepass",
+                "android",
+                "-keypass",
+                "android"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Gradle Signing Report",
+            "type": "shell",
+            "command": "./gradlew",
+            "args": ["signingReport"],
+            "options": {
+                "cwd": "${workspaceFolder}/android"
+            },
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new"
+            },
+            "problemMatcher": []
+        }
+    ]
+}

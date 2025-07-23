@@ -11,7 +11,7 @@ class AppStrings {
   static const String forgotPassword = 'Parolni unutdingizmi?';
   static const String signInWithGoogle = 'Google orqali kirish';
   static const String alreadyHaveAccount = 'Hisobingiz bormi?';
-  static const String dontHaveAccount = 'Hisobingiz yo\'qmi?';
+  static const String dontHaveAccount = 'Hisobingiz yoqmi?';
 
   // Dashboard
   static const String dashboard = 'Bosh sahifa';
@@ -22,7 +22,7 @@ class AppStrings {
   static const String expense = 'Xarajat';
 
   // Transactions
-  static const String addTransaction = 'Tranzaksiya qo\'shish';
+  static const String addTransaction = 'Tranzaksiya qoshish';
   static const String editTransaction = 'Tranzaksiyani tahrirlash';
   static const String amount = 'Summa';
   static const String category = 'Kategoriya';

@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'app_error.dart';
 
 /// Error handler following SOLID principles
@@ -48,7 +48,7 @@ class ErrorHandler {
       case 'resource-exhausted':
         return 'Resurs tugadi';
       default:
-        return 'Ma\'lumotlar bazasi xatoligi';
+        return ' baza xatoligi';
     }
   }
 }

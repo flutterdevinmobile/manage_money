@@ -31,7 +31,7 @@ class ErrorHandler {
       case 'user-disabled':
         return 'Foydalanuvchi hisobi bloklangan';
       case 'too-many-requests':
-        return 'Juda ko\'p urinish. Keyinroq qayta urinib ko\'ring';
+        return 'Juda kop urinish. Keyinroq qayta urinib ko\'ring';
       default:
         return 'Autentifikatsiya xatoligi';
     }

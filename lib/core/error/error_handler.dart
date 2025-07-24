@@ -46,7 +46,7 @@ class ErrorHandler {
       case 'deadline-exceeded':
         return 'So\'rov vaqti tugadi';
       case 'resource-exhausted':
-        return 'Resurs tugadi';
+        return 'Resurs еtugadi';
       default:
         return ' baza xatoligi';
     }

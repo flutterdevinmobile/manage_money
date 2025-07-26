@@ -44,7 +44,7 @@ class ErrorHandler {
       case 'unavailable':
         return 'Xizmat vaqtincha mavjud emas';
       case 'deadline-exceeded':
-        return 'So\'rov vaqti tugadi';
+        return 'Sorov vaqti tugadi';
       case 'resource-exhausted':
         return 'Resurs tugadi';
       default:

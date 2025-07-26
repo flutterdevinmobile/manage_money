@@ -105,7 +105,7 @@ class FirebaseAuthService {
       case 'user-not-found':
         return 'Foydalanuvchi topilmadi';
       case 'wrong-password':
-        return 'Noto\'g\'ri parol';
+        return 'Notori parol';
       case 'email-already-in-use':
         return 'Email allaqachon ishlatilmoqda';
       case 'weak-password':

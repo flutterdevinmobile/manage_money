@@ -21,13 +21,13 @@ class ErrorHandler {
       case 'user-not-found':
         return 'Foydalanuvchi topilmadi';
       case 'wrong-password':
-        return 'Noto\'g\'ri parol';
+        return 'Notogri parol';
       case 'email-already-in-use':
         return 'Email allaqachon ishlatilmoqda';
       case 'weak-password':
         return 'Zaif parol';
       case 'invalid-email':
-        return 'Noto\'g\'ri email';
+        return 'Notogri email';
       case 'user-disabled':
         return 'Foydalanuvchi hisobi bloklangan';
       case 'too-many-requests':

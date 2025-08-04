@@ -111,7 +111,7 @@ class FirebaseAuthService {
       case 'weak-password':
         return 'Zaif parol';
       case 'invalid-email':
-        return 'Noto\'g\'ri email';
+        return 'Notog\ri email';
       default:
         return 'Xatolik yuz berdi: ${e.message}';
     }

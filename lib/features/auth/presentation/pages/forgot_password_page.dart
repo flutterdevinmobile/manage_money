@@ -54,7 +54,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                     final email = _emailController.text.trim();
                     if (email.isNotEmpty) {}
                   },
-                  child: const Text('Send  Email'),
+                  child: const Text('Send Reset Email'),
                 ),
               )
             ],

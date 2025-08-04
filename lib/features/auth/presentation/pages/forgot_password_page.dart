@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import '../bloc/auth_bloc.dart';
-import '../bloc/auth_event.dart';
 import '../bloc/auth_state.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
@@ -52,11 +52,9 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                 child: ElevatedButton(
                   onPressed: () {
                     final email = _emailController.text.trim();
-                    if (email.isNotEmpty) {
-                      
-                    }
+                    if (email.isNotEmpty) {}
                   },
-                  child: const Text('Send Reset Email'),
+                  child: const Text('Send  Email'),
                 ),
               )
             ],

@@ -123,7 +123,7 @@ class _AddGoalPageState extends State<AddGoalPage> {
                   decoration: const InputDecoration(
                     labelText: 'Maqsad summasi',
                     prefixIcon: Icon(Icons.attach_money),
-                    suffixText: 'so\'m',
+                    suffixText: 'som',
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_contacts/flutter_contacts.dart';
 import 'package:intl/intl.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:flutter_contacts/flutter_contacts.dart';
-
 
 import '../../../../core/constants/app_strings.dart';
 import '../../../../inject.dart';
@@ -29,7 +28,7 @@ class _AddLoanPageState extends State<AddLoanPage> {
   final _contactPhoneController = TextEditingController();
   final _amountController = TextEditingController();
   final _descriptionController = TextEditingController();
-  
+
   LoanType _selectedType = LoanType.lent;
   DateTime _selectedDueDate = DateTime.now().add(const Duration(days: 30));
 
@@ -162,7 +161,7 @@ class _AddLoanPageState extends State<AddLoanPage> {
                       return 'Summani kiriting';
                     }
                     if (double.tryParse(value) == null) {
-                      return 'To\'g\'ri summa kiriting';
+                      return 'Togri summa kiriting';
                     }
                     return null;
                   },
@@ -190,7 +189,8 @@ class _AddLoanPageState extends State<AddLoanPage> {
                 ListTile(
                   leading: const Icon(Icons.calendar_today),
                   title: const Text(AppStrings.dueDate),
-                  subtitle: Text(DateFormat('dd/MM/yyyy').format(_selectedDueDate)),
+                  subtitle:
+                      Text(DateFormat('dd/MM/yyyy').format(_selectedDueDate)),
                   onTap: _selectDueDate,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8),
@@ -205,54 +205,56 @@ class _AddLoanPageState extends State<AddLoanPage> {
     );
   }
 
-Future<void> _selectContact() async {
-  final permission = await Permission.contacts.request();
-  if (permission.isGranted) {
-    try {
-      final contacts = await FlutterContacts.getContacts();
-      if (contacts.isNotEmpty && mounted) {
-        final contact = await showDialog<Contact>(
-          context: context,
-          builder: (context) => AlertDialog(
-            title: const Text('Kontakt tanlang'),
-            content: SizedBox(
-              width: double.maxFinite,
-              height: 300,
-              child: ListView.builder(
-                itemCount: contacts.length,
-                itemBuilder: (context, index) {
-                  final contact = contacts[index];
-                  return ListTile(
-                    title: Text(contact.displayName ?? ''),
-                    subtitle: Text(contact.phones?.isNotEmpty == true 
-                        ? contact.phones!.first.number ?? ''  // <=== O'ZGARTIRILDI
-                        : ''),
-                    onTap: () => Navigator.pop(context, contact),
-                  );
-                },
+  Future<void> _selectContact() async {
+    final permission = await Permission.contacts.request();
+    if (permission.isGranted) {
+      try {
+        final contacts = await FlutterContacts.getContacts();
+        if (contacts.isNotEmpty && mounted) {
+          final contact = await showDialog<Contact>(
+            context: context,
+            builder: (context) => AlertDialog(
+              title: const Text('Kontakt tanlang'),
+              content: SizedBox(
+                width: double.maxFinite,
+                height: 300,
+                child: ListView.builder(
+                  itemCount: contacts.length,
+                  itemBuilder: (context, index) {
+                    final contact = contacts[index];
+                    return ListTile(
+                      title: Text(contact.displayName ?? ''),
+                      subtitle: Text(contact.phones?.isNotEmpty == true
+                          ? contact.phones!.first.number ??
+                              '' // <=== O'ZGARTIRILDI
+                          : ''),
+                      onTap: () => Navigator.pop(context, contact),
+                    );
+                  },
+                ),
               ),
             ),
-          ),
-        );
+          );
 
-        if (contact != null) {
-          _contactNameController.text = contact.displayName ?? '';
-          if (contact.phones?.isNotEmpty == true) {
-            _contactPhoneController.text = contact.phones!.first.number ?? '';  // <=== O'ZGARTIRILDI
+          if (contact != null) {
+            _contactNameController.text = contact.displayName ?? '';
+            if (contact.phones?.isNotEmpty == true) {
+              _contactPhoneController.text =
+                  contact.phones!.first.number ?? ''; // <=== O'ZGARTIRILDI
+            }
           }
         }
+      } catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Kontaktlarni yuklashda xatolik: $e')),
+        );
       }
-    } catch (e) {
+    } else {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text('Kontaktlarni yuklashda xatolik: $e')),
+        const SnackBar(content: Text('Kontaktlarga ruxsat berilmadi')),
       );
     }
-  } else {
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Kontaktlarga ruxsat berilmadi')),
-    );
   }
-}
 
   Future<void> _selectDueDate() async {
     final date = await showDatePicker(
@@ -276,8 +278,8 @@ Future<void> _selectContact() async {
           id: '',
           userId: authState.user.id,
           contactName: _contactNameController.text,
-          contactPhone: _contactPhoneController.text.isNotEmpty 
-              ? _contactPhoneController.text 
+          contactPhone: _contactPhoneController.text.isNotEmpty
+              ? _contactPhoneController.text
               : null,
           amount: double.parse(_amountController.text),
           description: _descriptionController.text,

@@ -56,7 +56,7 @@ class _AddGoalPageState extends State<AddGoalPage> {
       create: (context) => getIt<GoalBloc>(),
       child: Scaffold(
         appBar: AppBar(
-          title: Text(widget.goal == null ? 'Maqsad qo\'shish' : 'Maqsadni tahrirlash'),
+          title: Text(widget.goal == null ? 'Maqsad qoshish' : 'Maqsadni tahrirlash'),
           actions: [
             BlocBuilder<GoalBloc, GoalState>(
               builder: (context, state) {

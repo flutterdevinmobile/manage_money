@@ -130,7 +130,7 @@ class _AddGoalPageState extends State<AddGoalPage> {
                       return 'Summani kiriting';
                     }
                     if (double.tryParse(value) == null) {
-                      return 'To\'g\'ri summa kiriting';
+                      return 'Togri summa kiriting';
                     }
                     return null;
                   },

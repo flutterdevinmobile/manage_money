@@ -40,8 +40,8 @@ class _LoanListViewState extends State<LoanListView> {
     final authState = context.read<AuthBloc>().state;
     if (authState is AuthAuthenticated) {
       context.read<LoanBloc>().add(
-        LoanLoadRequested(userId: authState.user.id),
-      );
+            LoanLoadRequested(userId: authState.user.id),
+          );
     }
   }
 
@@ -77,7 +77,7 @@ class _LoanListViewState extends State<LoanListView> {
                       Icon(Icons.handshake, size: 64, color: Colors.grey),
                       SizedBox(height: 16),
                       Text(
-                        'Hech qanday qarz yo\'q',
+                        'Hech qanday qarz yoq',
                         style: TextStyle(fontSize: 18, color: Colors.grey),
                       ),
                     ],

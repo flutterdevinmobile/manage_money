@@ -151,7 +151,7 @@ class _AddExpensePageState extends State<AddExpensePage> {
                       return 'Summani kiriting';
                     }
                     if (double.tryParse(value) == null) {
-                      return 'To\'g\'ri summa kiriting';
+                      return 'Togri summa kiriting';
                     }
                     return null;
                   },

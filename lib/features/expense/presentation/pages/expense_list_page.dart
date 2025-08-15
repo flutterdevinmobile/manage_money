@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-
 import '../../../../core/constants/app_strings.dart';
 import '../../../../inject.dart';
 import '../../../auth/presentation/bloc/auth_bloc.dart';
@@ -42,8 +41,8 @@ class _ExpenseListViewState extends State<ExpenseListView> {
     final authState = context.read<AuthBloc>().state;
     if (authState is AuthAuthenticated) {
       context.read<ExpenseBloc>().add(
-        ExpenseLoadRequested(userId: authState.user.id),
-      );
+            ExpenseLoadRequested(userId: authState.user.id),
+          );
     }
   }
 
@@ -87,7 +86,7 @@ class _ExpenseListViewState extends State<ExpenseListView> {
                       Icon(Icons.receipt_long, size: 64, color: Colors.grey),
                       SizedBox(height: 16),
                       Text(
-                        'Hech qanday tranzaksiya yo\'q',
+                        'Hech qanday tranzaksiya yoq',
                         style: TextStyle(fontSize: 18, color: Colors.grey),
                       ),
                     ],
@@ -145,7 +144,8 @@ class _ExpenseListViewState extends State<ExpenseListView> {
       context: context,
       builder: (context) => AlertDialog(
         title: const Text('Tranzaksiyani o\'chirish'),
-        content: const Text('Haqiqatan ham bu tranzaksiyani o\'chirmoqchimisiz?'),
+        content:
+            const Text('Haqiqatan ham bu tranzaksiyani o\'chirmoqchimisiz?'),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
@@ -155,8 +155,8 @@ class _ExpenseListViewState extends State<ExpenseListView> {
             onPressed: () {
               Navigator.pop(context);
               context.read<ExpenseBloc>().add(
-                ExpenseDeleteRequested(expenseId: expenseId),
-              );
+                    ExpenseDeleteRequested(expenseId: expenseId),
+                  );
             },
             child: const Text(AppStrings.delete),
           ),

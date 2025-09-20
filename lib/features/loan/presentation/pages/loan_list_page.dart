@@ -77,7 +77,7 @@ class _LoanListViewState extends State<LoanListView> {
                       Icon(Icons.handshake, size: 64, color: Colors.grey),
                       SizedBox(height: 16),
                       Text(
-                        'Hech qanday qarz yo',
+                        'Hech qanday qarz yoq',
                         style: TextStyle(fontSize: 18, color: Colors.grey),
                       ),
                     ],

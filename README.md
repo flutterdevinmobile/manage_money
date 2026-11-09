@@ -1,16 +1,40 @@
-# manage_qarz_app
+<div align="center">
 
-A new Flutter project.
+# 💳 Manage Money — Personal Finance, Debt & Expense Tracker
 
-## Getting Started
+[![Flutter](https://img.shields.io/badge/Flutter-Mobile-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
+[![Firebase](https://img.shields.io/badge/Firebase-Cloud%20Sync-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com)
+[![BLoC](https://img.shields.io/badge/State-BLoC-38BDF8?style=for-the-badge)]()
+[![Charts](https://img.shields.io/badge/Analytics-fl__chart-8B5CF6?style=for-the-badge)]()
 
-This project is a starting point for a Flutter application.
+**A smart personal finance, debt/loan ledger, and daily expense tracking application with real-time cloud synchronization.**
 
-A few resources to get you started if this is your first Flutter project:
+</div>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## ✨ Key Features
+
+- 💰 **Income, Expense & Debt Ledger:** Track daily expenses, income streams, borrowed funds, and lent money with due-date reminders.
+- ☁️ **Real-Time Cloud Sync & Google Sign-In:** Instant backup and multi-device synchronization powered by Firebase Authentication & Cloud Firestore.
+- 📊 **Interactive Financial Analytics:** Category breakdown pie charts and monthly cash-flow trend graphs built with l_chart.
+- 🔔 **Smart Reminders:** Push and local notifications for upcoming debt repayments and budget thresholds.
+
+## 🏗️ Architecture & Tech Stack
+
+- **Frontend:** Flutter, Dart, Material 3 Design
+- **State Management:** lutter_bloc (BLoC / Cubit)
+- **Backend & Auth:** Firebase Auth (Google Sign-In), Cloud Firestore
+- **Data Visualization:** l_chart
+
+## 🚀 Getting Started
+
+`ash
+git clone https://github.com/flutterdevinmobile/manage_money.git
+cd manage_money
+flutter pub get
+flutter run
+`
+
+---
+<p align="center">Engineered by <a href="https://github.com/flutterdevinmobile">Abduqahhor Abduganiyev</a> @ <a href="https://github.com/dewibeuz">DEWIBE</a></p>
